@@ -1,9 +1,9 @@
-# Python script to demonstrate opening a website (Python official site) and searching for
-# a term ('lists' in our case) on the site
-
-# NB: ensure the 'selenium' module is installed by running `pip install selenium` on the terminal
-
-# Import the required modules
+# # Python script to demonstrate opening a website (Python official site) and searching for
+# # a term ('lists' in our case) on the site
+#
+# # NB: ensure the 'selenium' module is installed by running `pip install selenium` on the terminal
+#
+# # Import the required modules
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -39,3 +39,34 @@ for result in results:
 
 # Close the browser
 driver.quit()
+
+# Python script to demonstrate opening a website and searching on Google
+
+# NB: ensure selenium is installed by running: pip install selenium on the terminal
+
+# Import the required modules
+# from selenium import webdriver
+# from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.by import By
+#
+# # Set up the browser (e.g., Firefox)
+# driver = webdriver.Firefox() # Chrome
+#
+# # Open google
+# driver.get("https://google.com")
+#
+# # Find the search box and enter a query
+# search_box = driver.find_element(By.NAME, "q")
+# search_box.send_keys("Selenium Python")
+# search_box.send_keys(Keys.RETURN)
+#
+# # Wait for the result for 50 seconds (allows us to fill in capture)
+# driver.implicitly_wait(50)
+#
+# # Print/display the titles of the search results
+# results = driver.find_elements(By.CSS_SELECTOR, "h3")
+# for result in results:
+#    print(result.text)
+#
+# # Close the browser
+# driver.quit()
