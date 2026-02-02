@@ -43,11 +43,24 @@ print("\n----5. Accessing data from a Dataframe ----")
 print("Single column (series):\n")
 print(f"df['Name']\n")
 print(f"Multiple columns:\n{df[['Name', 'Age', 'Department']]}")
-
+print(f"Access by index position (iloc):")
+print(f"First row: \n{df.iloc[0]}")
+print(f"Specific cell (row 2, column 'Age':\n{df.iloc[1, 1]}")
+print(f"Access by label (loc):\nEmployee with index 2:\n{df.loc[2]}")
 print("*" * 50)
 
-
-
+# 6. Create a Dataframe from a list of lists
+print("\n----6. Create a Dataframe from a list of lists ----")
+product_data = [
+    ['Laptop', 99999.5, 'Electronics', 50],
+    ['Mouse', 250.0, 'Electronics', 200],
+    ['Notebook', 599.0, 'Stationary', 150],
+    ['Pen', 199.0, 'Stationary', 150]
+]
+product_columns = ['Product', 'Price', 'Category', 'Stock']
+product_df = pd.DataFrame(product_data, columns=product_columns)
+print(f"Product dataframe:\n{product_df}")
+print("*" * 50)
 
 # 2. Create a Dataframe with custom index
 print("\n----2. Create a Dataframe with custom index ----")
