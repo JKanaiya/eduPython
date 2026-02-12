@@ -55,3 +55,39 @@ print("*" * 50)
 print(F"Confusion matric of KNN model:\n {conf_matric}")
 print("*" * 50)
 print(f"Classification report of KNN model:\n {classf_report}")
+
+# Function to visualise decision boundary
+def plot_decision_boundary(X, y, model):
+    plt.figure(figsize=(10, 6))
+
+    # Plot the decision boundary tree
+    ax = plt.gca()
+    xlim = ax.get_xlim() # Limit of the x axis
+    ylim = ax.get_ylim() # Limit of the y axis
+
+    # Create a mesh to plot the decision boundary
+    xx, yy = np.meshgrid( # Generate 100 evenly spaced points between start & end
+        np.linspace(xlim[0], xlim[1], 100),
+        np.linspace(ylim[0], ylim[1], 100)
+    )
+
+    Z = model.decision_function(np.c_[xx.ravel(), yy.ravel()]) # Flatten the 2-D array into a 1-D array
+    Z = Z.reshape(xx.shape)
+
+    # Plot the decision boundary and margins
+    plt.contourf(xx, yy, Z > 0, alpha=0.2, colors=['#ffaaaa', '#aaaaff'])
+    plt.contour(xx, yy, Z, colors='k', levels=[-1, 0, 1], linestyles=['--', '-', '--'])
+
+    # Plot the support vector
+    plt.scatter(model.support_vectors_[:,0], model.support_vectors_[:,1], s=100, facecolors='none', edgecolors='k', label='Support Vectors')
+
+    # Plot the data points
+    plt.scatter(X[:,0], X[:,1], s=50, c=y, cmap=plt.cm.Paired, edgecolors='k')
+    plt.xlabel('Weight (grams)')
+    plt.ylabel('Size (cm)')
+    plt.title('SVM Decision Boundaries & Support Vectors')
+    plt.legend()
+    plt.show()
+
+    # Call the plot decision_boundary function to visualise the decision boundary and support vectors
+    plot_decision_boundary(X, y, svm_clf)
