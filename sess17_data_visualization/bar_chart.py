@@ -11,6 +11,7 @@ plt.xlabel("Student Names")
 plt.xlabel("Student Scores")
 plt.title("Exam Marks")
 plt.xticks(rotation=45)
-plt.grid(axis='y')
+plt.grid(axis="y")
 plt.tight_layout()
 plt.show()
+

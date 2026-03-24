@@ -6,7 +6,7 @@ numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
 # Get and display the squares of the above Fibonacci numbers using a list comprehension
 fib_squares = [num ** 2 for num in numbers]
 print(f"Original numbers: {numbers}")
-print(f"Squares: {fib_squares}")
+print(f"Squares: ")
 
 even_fib_squares = [num ** 3 for num in numbers if num % 2 == 0]
 print(f"Even Cubed fib numbers: {even_fib_squares}")

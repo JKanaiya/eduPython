@@ -5,13 +5,13 @@ def log_dimensions(cls):
     def wrapper(*args, **kwargs):
         print(f"Logging dimensions of {cls}")
         rectangle = cls(*args, **kwargs)
-        print(f"Rectangle dimensions logged!")
+        print("Rectangle dimensions logged!")
         return rectangle
 
     return wrapper
 
 
-@log_dimensions
+@log_dimensions  # this is called
 class Rectangle:
     def __init__(self, width=0, length=0):
         self.width = width

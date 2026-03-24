@@ -10,9 +10,9 @@ def fibonacci(n):
     :return: The nth fibonacci number
     """
     if n == 0:
-        return 0;
+        return 0
     elif n == 1:
-        return 1;
+        return 1
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
@@ -32,7 +32,9 @@ def fib_decorator(func):
         result = func(n)
         print("Fibonacci nmbers calculated")
         return result
+
     return wrapper
+
 
 # Make use of the above decorator
 @fib_decorator
@@ -48,5 +50,7 @@ def generate_fibonacci_numbers(n):
     """
     return [fibonacci(a) for a in range(n)]
 
+
 # Call / invoke the generate_fibonaci_numbers() function to get the first 7 Fibonacci numbers
 print(generate_fibonacci_numbers(7))
+

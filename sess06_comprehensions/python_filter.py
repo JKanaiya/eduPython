@@ -12,8 +12,7 @@ print(f"Odd fibonacci numbers: {odd_fibonacci}")
 student_names = {
     "Abigail", "Bernice", "Charlene", "Denise", "Sue", "Jim", "Mark", "Micha",
     "William", "Jane", "Xi", "Alfred", "Hillary", "Anthony", "Birdig",
-    "Mitchell", "Alice"
-}
+    "Mitchell", "Alice"}
 
 # Use the filter() function to get and display the names starting with 'A'
 filtered_names = list(filter(lambda name: name.startswith('A'), student_names))

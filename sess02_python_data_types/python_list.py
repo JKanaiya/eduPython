@@ -55,7 +55,9 @@ print(f"After reversing the fruits list: {fruits}")
 
 # Get and display the minimum and maximum items / elements in the list
 # (least and highest fruits letterwise)
-print(f"The least fruit letterwise is: {min(fruits)}\n The highest fruit letterwise is {max(fruits)}")
+print(
+    f"The least fruit letterwise is: {min(fruits)}\n The highest fruit letterwise is {max(fruits)}"
+)
 
 # Creating a copy of the fruits list
 copy_of_fruits = fruits.copy()
@@ -66,9 +68,19 @@ fruits.clear()
 print(f"After removing all fruits we get: {fruits}")
 
 # Re-assigning the frsuits list
-fruits = ["apple", "kiwi", "grape", "orange", "tangerine", "lemon", "avacado", "cocnut", "fig"]
+fruits = [
+    "apple",
+    "kiwi",
+    "grape",
+    "orange",
+    "tangerine",
+    "lemon",
+    "avacado",
+    "cocnut",
+    "fig",
+]
 
-print(f"*"*40)
+print("*" * 40)
 # Displaying the new fruits list
 print(f"After re-assignment, the new fruits list is: {fruits}")
 
@@ -91,4 +103,4 @@ print(f"ALl fruits except 1st and last one: {fruits[1:-1]}")
 print(f"All fruits starting from 3rd last: {fruits[-3::-1]}")
 
 # Get and display an empty slice from the fruit list
-print(f"The empty slice from the fruit list is: {fruits[len(fruits)-1:3]}")
+print(f"The empty slice from the fruit list is: {fruits[len(fruits) - 1 : 3]}")

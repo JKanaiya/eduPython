@@ -25,7 +25,7 @@ fruits.remove("banana")
 print(f"After removing 'banana' from the set we get: {fruits}")
 
 # Discard 'cherry' from the fruit set
-fruits.discard('cherry')
+fruits.discard("cherry")
 print(f"After discarding 'cherry' from the set we get: {fruits}")
 
 # Remove the last item from the set
@@ -47,12 +47,14 @@ print(f"The combined set of fruits is : {combined_fruits}")
 common_fruits = combined_fruits.intersection(more_fruits)
 print(f"The common set of fruits is : {common_fruits}")
 
+
 # Get and display the fruits that are in 'fruits' set but not in  'more_fruit'
 fruits_difference = fruits.difference(more_fruits)
 print(f"The difference of fruits we get is : {fruits_difference}")
 
 # Get and display the fruits that are either in 'fruits' or in 'more_fruits' but not in both
 symmetric_fruits = fruits.symmetric_difference(more_fruits)
+print(f"The symmetric set of fruits we get is : {fruits ^ more_fruits}")
 print(f"The symmetric set of fruits we get is : {symmetric_fruits}")
 
 # Check and display whether fruit set is a subset of "more_fruits"
@@ -60,13 +62,18 @@ print(f"'fruit' set is a superset of 'more_fruits': {fruits.issuperset(more_frui
 
 # Check and display wether 'fruit' set and 'more_fruit' set have no common fruit elements
 is_disjoint_fruits = fruits.isdisjoint(more_fruits)
-print(f"'fruit' set and 'more_fruits' set have no common fruit / elements: {is_disjoint_fruits}")
+print(
+    f"'fruit' set and 'more_fruits' set have no common fruit / elements: {is_disjoint_fruits}"
+)
 
 # Create another fruit set and use it to update the set of fruits: CAUTION...overwrites set elements
-other_fruits = {"watermelon", "strawberry", "blueberry" }
+other_fruits = {"watermelon", "strawberry", "blueberry"}
 fruits.update(other_fruits)
 print(f"After updating the 'fruits' set we get: {fruits}")
+
+print(f"Here: {fruits <= fruits.copy()}")
 
 # Clear and display the 'fruits' set
 fruits.clear()
 print(f"After clearing the 'fruits' set we get: {fruits}")
+

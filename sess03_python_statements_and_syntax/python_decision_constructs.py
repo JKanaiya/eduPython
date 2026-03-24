@@ -6,7 +6,7 @@ import sys
 # 1. if
 temperature = float(input("Please enter today's temperature in degrees celcius: "))
 if temperature > 25:
-    print(f"☁ Its not that hot")
+    print("☁ Its not that hot")
 
 password = "idkidkidk"
 if password == "":
@@ -21,22 +21,22 @@ else:
 
 score = int(input("Please enter your score: "))
 if score >= 40:
-    print(f"You have passed!")
+    print("You have passed!")
 else:
-    print(f"You have failed!")
+    print("You have failed!")
 
 # 3. if...elif(else if)...else
 # Grade the student based on their score entered above
 if score >= 70 and score <= 100:
-    print(f"You have passed with an A!")
+    print("You have passed with an A!")
 elif score >= 60 and score <= 69:
-    print(f"You have passed with a B!")
+    print("You have passed with a B!")
 elif score >= 50 and score <= 59:
-    print(f"You have passed with a C!")
+    print("You have passed with a C!")
 elif score >= 40 and score <= 49:
-    print(f"You have passed with a D!")
+    print("You have passed with a D!")
 elif score >= 0 and score <= 39:
-    print(f"You have failed with a F!")
+    print("You have failed with a F!")
 else:
     print(f"Sorry {score} is not a valid number!")
     sys.exit()
@@ -58,13 +58,14 @@ match day.lower():
 # Give the student a comment based on their score in the exam using match
 match score:
     case score if score >= 70:
-        print(f"Excellent job!")
+        print("Excellent job!")
     case score if score >= 60:
-        print(f"Not bad...")
+        print("Not bad...")
     case score if score >= 50:
-        print(f"Not good...")
+        print("Not good...")
     case score if score >= 40 and score >= 0:
-        print(f"hehe...")
+        print("hehe...")
     case _:
         print(f"Sorry {score} is not a valid score")
         sys.exit()
+

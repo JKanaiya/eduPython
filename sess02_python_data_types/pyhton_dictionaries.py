@@ -12,7 +12,7 @@ Some dictionary operations are given below:
 student = {"name": "MHD", "age": "20", "major": "Computer Science"}
 
 # Display the length (number of keyv-value pairs) of the 'student' dictionary
-print(f"Lenght of 'student' dictionary: {len(student)}")
+print(f"Length of 'student' dictionary: {len(student)}")
 
 # Fetch and display a view object (method to get the keys or values from a dictionary)
 # of the keys in the 'student' dictionary

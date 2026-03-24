@@ -23,22 +23,22 @@ class Student:
     def to_dict(self):
         """Convert Student object to a JSON-serializable dictionary."""
         return {
-            'reg_no': self.reg_no,
-            'name': self.name,
-            'birthdate': self.birthdate.isoformat(),  # FIX: date → string
-            'gender': self.gender
+            "reg_no": self.reg_no,
+            "name": self.name,
+            "birthdate": self.birthdate.isoformat(),  # FIX: date → string
+            "gender": self.gender,
         }
 
     @staticmethod
     def from_dict(data):
         """Create a Student object from a dictionary."""
         return Student(
-            reg_no=data['reg_no'],
-            name=data['name'],
+            reg_no=data["reg_no"],
+            name=data["name"],
             birthdate=datetime.strptime(
-                data['birthdate'], '%Y-%m-%d'
+                data["birthdate"], "%Y-%m-%d"
             ).date(),  # FIX: datetime → date
-            gender=data['gender']
+            gender=data["gender"],
         )
 
 
@@ -53,12 +53,12 @@ def student_json_handler(file_path):
     """
 
     def serialise(student):
-        with open(file_path, 'w') as f:
+        with open(file_path, "w") as f:
             json.dump(student.to_dict(), f, indent=4)
         print(f"Student serialized successfully to: {file_path}")
 
     def deserialise():
-        with open(file_path, 'r') as f:
+        with open(file_path, "r") as f:
             data = json.load(f)
         student = Student.from_dict(data)
         print(f"Student deserialized successfully from: {file_path}")
@@ -70,15 +70,9 @@ def student_json_handler(file_path):
 # -------------------------------
 # Run the application
 # -------------------------------
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     # Create a Student object
-    student = Student(
-        "EICN-1234",
-        "Muhammad Hasan",
-        date(2006, 3, 25),
-        "Male"
-    )
+    student = Student("EICN-1234", "Muhammad Hasan", date(2006, 3, 25), "Male")
 
     # Build file path
     file_path = os.path.abspath(

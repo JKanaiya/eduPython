@@ -10,9 +10,7 @@ import csv
 from pathlib import Path
 
 # 1. Set up a polite user agent string
-headers = {
-    "User-Agent": "Edge (Windows NT 10.0; Win64; X64) MHD-Learning-Scraper/1.0"
-}
+headers = {"User-Agent": "Edge (Windows NT 10.0; Win64; X64) MHD-Learning-Scraper/1.0"}
 
 # 2. Specify the target URL (Website you wish to scrape)
 url = "https://books.toscrape.com/"
@@ -37,13 +35,13 @@ prices = soup.find_all("p", class_="price_color")
 
 # 5. Display the book titles then their prices
 print("First 8 book title")
-for book in books[:8]:
-    title = book.a["title"]
-    print(f"* {title}")
+# for book in books[:8]:
+# title = book.a["title"]
+# print(f"* {title}")
 
 print("First 8 book prices")
 for price in prices[:8]:
-    print(f"* {price.get_text().strip().replace("Â","")}")
+    print(f"* {price.get_text().strip().replace('Â', '')}")
 
 # 6. Combine the titles and prices safely
 book_data = []
@@ -60,7 +58,7 @@ files_dir = Path.cwd().parent / "files"
 files_dir.mkdir(exist_ok=True)
 
 csv_path = files_dir / "scraped_books.csv"
-with open(csv_path, "w", newline="", encoding='utf-8-sig') as csvfile:
+with open(csv_path, "w", newline="", encoding="utf-8-sig") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["Title", "Price"])
     writer.writerows(book_data)
@@ -68,5 +66,3 @@ with open(csv_path, "w", newline="", encoding='utf-8-sig') as csvfile:
 
 # Inform the user the data has been saved
 print(f"Saved {len(book_data)} records to {csv_path}")
-
-time.sleep(1.5) # Polite delay
