@@ -2,6 +2,8 @@
 
 # 1. For loop
 # Create a list of fruits
+import pprint
+
 fruits = [
     "kiwi",
     "watermelon",
@@ -27,43 +29,43 @@ fruits = [
 
 # Display each of the above fruits using a 'for' loop
 for fruit in fruits:
-    print(f"The current fruit is: {fruit}")
+    pprint.pp(f"The current fruit is: {fruit}")
 
 # Create a list of numbers
 numbers = [1, 3, 5, 12, 134, 56, 79, 38]
 for num in numbers:
-    print(f"The current number is: {num}")
+    pprint.pp(f"The current number is: {num}")
 
 # 2. range
-print("range".center(42, "-"))
+pprint.pp("range".center(42, "-"))
 
 test = "------------------range-------------------"
 
 # Basic range: generate first 5 numbers
 for n in range(5):
-    print(f"The ccurrent number in the range is: {n}")
+    pprint.pp(f"The ccurrent number in the range is: {n}")
 
 print("range with parameters".center(42, "-"))
 # Generate even numbers starting from 2 to 10 (exclusive) using a range with staart, stop and step value
 for n in range(2, 10, 2):
-    print(f"The ccurrent even number in the range is: {n}")
+    pprint.pp(f"The ccurrent even number in the range is: {n}")
 
 # Display the cubes of the first 5 integers using a ranged for loop and list comprehension
 cubes = [n**3 for n in range(1, 6)]
-print("The cubes of the first 5 numbers are: {cubes}")
+pprint.pp("The cubes of the first 5 numbers are: {cubes}")
 
 # 3. while loop
-print("while loop".center(42, "-"))
+pprint.pp("while loop".center(42, "-"))
 # Display the first  multiples of 8
 n = 1
 while n <= 5:
-    print(f"The {n} x 8 is: {n * 8}")
-    print("%d x 8 = %d" % (n, n * 8))
+    pprint.pp(f"The {n} x 8 is: {n * 8}")
+    pprint.pp("%d x 8 = %d" % (n, n * 8))
     n += 1
 
 # Create a list of even numbers
 n, even_nums = 1, []
-print("The even numbers between 1 - 20 are:")
+pprint.pp("The even numbers between 1 - 20 are:")
 while n <= 20:
     if n % 2 == 1:
         n += 1
@@ -99,6 +101,6 @@ while index < len(paragraph):
     index += 1
 
 if found:
-    print(f"The word {word} was found at index {index}")
+    pprint.pp(f"The word {word} was found at index {index}")
 else:
-    print(f"The word {word} was not found")
+    pprint.pp(f"The word {word} was not found")
