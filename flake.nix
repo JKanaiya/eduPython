@@ -13,11 +13,12 @@
   in {
       devShells.${system}.default = pkgs.mkShell {
        packages = with pkgs; [
-      (python312.withPackages (python-pkgs: with python-pkgs; [
+      (python313.withPackages (python-pkgs: with python-pkgs; [
         pandas
         # requests
         numpy
         pandas
+        torch
         scipy
         scikit-learn 
         tensorflow
