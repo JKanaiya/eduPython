@@ -22,6 +22,9 @@
         scikit-learn 
         nltk
         spacy
+        transformers
+        spacy-transformers
+        rich
         notebook
         tensorflow
         # pymc

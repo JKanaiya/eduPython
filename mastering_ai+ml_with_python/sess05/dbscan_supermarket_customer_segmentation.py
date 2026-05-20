@@ -176,14 +176,14 @@ def preprocess(df: pd.DataFrame):
 # ------------------------------------------------------------------------------------------------------
 
 
-def run_dbscan(X, eps=0.8, min_samples=12):
+def run_dbscan(X, eps=0.8, min_points=12):
     """
     Run DBSCAN clustering
     Args:
         eps: Neighborhood radius
         min_samples: minimum points to form a cluster
     """
-    model = DBSCAN(eps=eps, min_samples=min_samples)
+    model = DBSCAN(eps=eps, min_samples=min_points)
     labels = model.fit_predict(X)
     return labels
 
@@ -303,7 +303,9 @@ def segment_summary(df: pd.DataFrame) -> pd.DataFrame:
 
 def plot_pca_clusters(X, labels):
     """PCA projection of clusters (2D visualisation)"""
+    print(X)
     pca = PCA(n_components=2)
+    print(pca)
     X_2d = pca.fit_transform(X)
 
     plt.figure(figsize=(8, 6))

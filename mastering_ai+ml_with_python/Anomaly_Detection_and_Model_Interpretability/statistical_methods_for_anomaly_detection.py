@@ -102,7 +102,9 @@ methods = [
     ("Gaussian", gaussian_anomalies),
 ]
 
-for n, (title, mask) in enumerate(methods, 1):
+for n, (title, mask) in enumerate(
+    methods, 1
+):  # pyplot is 1 indexed. ew. this is basically accounting for the offset
     plt.subplot(2, 2, n)
 
     plt.scatter(range(len(data)), data, label="Normal", alpha=0.6)
