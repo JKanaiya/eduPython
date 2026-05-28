@@ -20,10 +20,16 @@
         torch
         scipy
         scikit-learn 
+        sentencepiece
+        sacrebleu
+        rouge-score
+        seqeval
+        sklearn-compat
         nltk
         spacy
         transformers
         spacy-transformers
+        hf-xet
         rich
         notebook
         tensorflow
@@ -45,6 +51,7 @@
         shellHook = ''
           venv="$(cd $(dirname $(which python)); cd ..; pwd)"
           ln -Tsf "$venv" .venv
+          pip install sklearn-crfsuite
           echo "Python environment loaded. Virtual env linked to .venv"
           exec zsh
         '';
